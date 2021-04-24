@@ -7,3 +7,7 @@ function load() {
 
     }
 }
+
+function unload() {
+    document.cookie = "chronometer=false"
+}
