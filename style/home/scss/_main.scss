@@ -1,0 +1,51 @@
+.input {
+    & > input {
+        height: 40px;
+        padding: 5px;
+        background-color: #44475a;
+        border: none;
+        border-radius: 9px;
+        font-size: 1.3rem;
+        color: #f8f8f2;
+
+        &:hover {
+            transition-duration: 0.3s;
+            background-color: lighten($color: #44475a, $amount: 3)
+        }
+
+        &:focus {
+            outline: none;
+            background-color: lighten($color: #44475a, $amount: 3)
+        }
+    }
+}
+
+#errors {
+    color: #ff5555;
+    font-weight: 600;
+}
+
+.send {
+    & > button {
+        height: 40px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding: 6px;
+        margin-top: 9px;
+        border: none;
+        border-radius: 13px;
+        background-color: #21eb00;
+        color: #000;
+        cursor: pointer;
+
+        &:hover {
+            transition-duration: 0.15s;
+            background-color: lighten($color: #21eb00, $amount: 6);
+        }
+
+        &:focus {
+            outline: none;
+            background-color: darken($color: #21eb00, $amount: 15)
+        }
+    }
+}

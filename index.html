@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="./style/home/main.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section class="section">
+            <header>
+                <div class="header">
+                    <h1>Contador</h1>
+                    <label for="iDate">Informe uma data</label>
+                </div>
+            </header>
+            <main>
+                <div class="input">
+                    <span id="errors"></span> <br/>
+                    <input type="text" id="iDate" placeholder="DD/MM/AAAA" maxlength="10"/>
+                </div>
+                <div class="send">
+                    <button type="button" onclick="initializeCounter()">Iniciar contagem</button>
+                </div>
+            </main>
+        </section>
+    </main>
+
+    <!--Script to review input and initialize chronometer-->
+    <script src="./js/home/input.js"></script>
+    <script src="./js/home/init.js"></script>
+
+</body>
+</html>

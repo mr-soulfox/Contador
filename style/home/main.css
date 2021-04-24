@@ -1,0 +1,100 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif, arial;
+  font-weight: 400;
+  color: #21eb00;
+}
+
+body {
+  background-color: #282a36;
+}
+
+/*imports on scss*/
+.section {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section div {
+  margin: 5px;
+  text-align: center;
+}
+
+.header > h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.header > label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #f8f8f2;
+}
+
+.input > input {
+  height: 40px;
+  padding: 5px;
+  background-color: #44475a;
+  border: none;
+  border-radius: 9px;
+  font-size: 1.3rem;
+  color: #f8f8f2;
+}
+
+.input > input:hover {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  background-color: #4b4e63;
+}
+
+.input > input:focus {
+  outline: none;
+  background-color: #4b4e63;
+}
+
+#errors {
+  color: #ff5555;
+  font-weight: 600;
+}
+
+.send > button {
+  height: 40px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 6px;
+  margin-top: 9px;
+  border: none;
+  border-radius: 13px;
+  background-color: #21eb00;
+  color: #000;
+  cursor: pointer;
+}
+
+.send > button:hover {
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  background-color: #2dff0b;
+}
+
+.send > button:focus {
+  outline: none;
+  background-color: #169f00;
+}
+/*# sourceMappingURL=main.css.map */

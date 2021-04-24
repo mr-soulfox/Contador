@@ -1,0 +1,14 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+
+    & > div > h1 {
+        font-size: 6rem;
+        font-weight: 700;
+        color: #44475a;
+    }
+}

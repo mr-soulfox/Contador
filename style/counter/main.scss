@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif, arial;
+    font-weight: 400;
+    color: #21eb00;
+}
+
+body {
+    background-color: #282a36;
+}
+
+/*imports on scss*/
+@import "./scss/header";
+@import "./scss/main";
+@import "./scss/counter";
