@@ -10,16 +10,22 @@
     @include flex(row);
 
     & span {
+        @include flex(column);
         margin-top: 10px;
-        margin-left: 30px;
+        margin-left: 60px;
+    }
+
+    & span > span {
         @include flex(column);
         font-size: 3.5rem;
         font-weight: 600;
         color: #f2f2f8;
+        margin-top: 0;
+        margin-left: 0;
 
-        & > small {
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
+    }
+    & span > small {
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 }

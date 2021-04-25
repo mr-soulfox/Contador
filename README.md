@@ -9,7 +9,7 @@
 </p>
 <div>
     <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=21eb00&style=flat"/>
-    <img src="https://img.shields.io/static/v1?label=Status&message=80%&color=21eb00&style=flat"/>
+    <img src="https://img.shields.io/static/v1?label=Status&message=96%&color=21eb00&style=flat"/>
 </div>
 
 <hr/>

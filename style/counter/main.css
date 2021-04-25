@@ -99,8 +99,22 @@ body {
 }
 
 .counter span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
   margin-top: 10px;
-  margin-left: 30px;
+  margin-left: 60px;
+}
+
+.counter span > span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,6 +129,8 @@ body {
   font-size: 3.5rem;
   font-weight: 600;
   color: #f2f2f8;
+  margin-top: 0;
+  margin-left: 0;
 }
 
 .counter span > small {

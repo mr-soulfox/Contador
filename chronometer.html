@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body onload="load()" onunload="unload()">
+<body onload="load(), chronometer()" onbeforeunload="unload()">
     <main>
         <section>
             <header>
@@ -24,22 +24,22 @@
                     <h1>Faltam</h1>
                     <div class="counter">
                         <span>
-                            2 <br/>
+                            <span id="days">0</span> <br/>
                             <small>Dias</small>
                         </span> <br/>
 
                         <span>
-                            10 <br/>
+                            <span id="hours">0</span> <br/>
                             <small>Horas</small>
                         </span> <br/>
 
                         <span>
-                            40 <br>
+                            <span id="minutes">0</span> <br>
                             <small>Minutos</small>
                         </span> <br/>
                         
                         <span>
-                            13 <br/>
+                            <span id="seconds">0</span> <br/>
                             <small>Segundos</small>
                         </span>
                     </div>
@@ -49,6 +49,7 @@
     </main>
 
     <script src="./js/counter/load.js"></script>
+    <script src="./js/counter/chronometer.js"></script>
 
 </body>
 </html>
