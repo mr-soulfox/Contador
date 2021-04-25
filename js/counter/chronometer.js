@@ -11,34 +11,37 @@ function chronometer() {
     let nowDates = values.objDetails
 
     //calculate time
-    let result = calculate(nowDates, values)
+    days.textContent = calculate(nowDates, values)
 
     //set initial time
-    days.textContent = ((result - nowDates.days) - (requireDays(values.iYear, (values.iMonth + 1)) - values.iDays))
     hours.textContent = (24 - nowDates.hour)
-    minutes.textContent = (60 - nowDates.minutes)
-    seconds.textContent = (60 - nowDates.seconds) <= 0 ? 0 : (60 - nowDates.seconds) 
+    minutes.textContent = (59 - nowDates.minutes)
+    seconds.textContent = (59 - nowDates.seconds) <= 0 ? 0 : (59 - nowDates.seconds) 
     
     //initialize chronometer
     let id = setInterval(() => {
 
-        if (seconds.textContent <= 1) {
-            seconds.textContent = 60
-            minutes.textContent -= 1
-        }
-
-        if (minutes.textContent < 1) {
-            minutes.textContent = 60
-            hours.textContent -= 1
-        }
-
-        if (hours.textContent < 1) {
-            hours.textContent = 24
-            days.textContent -= 1
-        }
-
         if (days.textContent < 1 && hours.textContent < 1 && minutes.textContent < 1 && seconds.textContent < 1) {
+
             clearInterval(id)
+
+        } else {
+
+            if (seconds.textContent <= 1 && minutes.textContent > 0) {
+                seconds.textContent = 60
+                minutes.textContent -= 1
+            }
+    
+            if (minutes.textContent == 0 && hours.textContent > 0) {
+                minutes.textContent = 59
+                hours.textContent -= 1
+            }
+    
+            if (hours.textContent == 0 && days.textContent > 0) {
+                hours.textContent = 24
+                days.textContent -= 1
+            }
+
         }
 
         seconds.textContent = Number(seconds.textContent) - 1
@@ -76,22 +79,22 @@ function getValues() {
 function calculate(now, input) {
 
     let arrayDaysMonth = []
+    let numMonths = 0
 
-    //get days month
-    for (let m = now.month, y = now.year; m < (input.iMonth + 1) && y <= input.iYear; m++) {
+    if (input.iYear == now.year) {
 
-        let days = requireDays(input.iYear, (input.iMonth + 1))
-        arrayDaysMonth.push(days)
+        numMonths = input.iMonth - now.month
+        let nowMonth = now.month
 
-        if (m == 11 && y < input.iYear) {
-            y++
-            m = 0
-        }
-    }
+        for (let i = 0; i <= numMonths; i++) {
+            arrayDaysMonth.push(requireDays(now.year, (nowMonth + 1)))
+            nowMonth += 1
+        }   
+        
+        let sumDays = arrayDaysMonth.reduce((acc, cur) => acc + cur)
 
-    return arrayDaysMonth.reduce(function(total, num){
-            return total + num;
-            }, 0);
+        return sumDays
+    } 
 }
 
 //function to get numbers days
