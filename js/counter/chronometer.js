@@ -80,6 +80,7 @@ function calculate(now, input) {
 
     let arrayDaysMonth = []
     let numMonths = 0
+    let numYears = 0
 
     if (input.iYear == now.year) {
 
@@ -94,10 +95,35 @@ function calculate(now, input) {
         let sumDays = arrayDaysMonth.reduce((acc, cur) => acc + cur)
 
         let subDays = Math.abs(arrayDaysMonth[arrayDaysMonth.length - 1] - input.iDays) + Math.abs(arrayDaysMonth[0] - (arrayDaysMonth[0] - now.days))
-        console.log(subDays)
 
         return Math.abs(sumDays - subDays)
-    } 
+    } else {
+
+        numYears = Math.abs(input.iYear - now.year)
+        let nowYear = now.year
+
+        for (let i = now.month, y = 0; y <= numYears; i++) {
+
+            if (i > 11) {
+                nowYear += 1
+                y++
+                i = 0
+            } else if (i == input.iMonth && y == numYears) {
+                y++
+            }
+
+            arrayDaysMonth.push(requireDays(nowYear, i))
+            console.log(i, y, numYears)
+        }
+        console.log(arrayDaysMonth)
+
+        let sumDays = arrayDaysMonth.reduce((acc, cur) => acc + cur)
+        console.log(sumDays)
+
+        let subDays = Math.abs(arrayDaysMonth[arrayDaysMonth.length - 1] - input.iDays) + Math.abs(arrayDaysMonth[0] - (arrayDaysMonth[0] - now.days))
+
+        return Math.abs(sumDays - subDays)
+    }
 }
 
 //function to get numbers days

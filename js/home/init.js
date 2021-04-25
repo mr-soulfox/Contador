@@ -8,7 +8,7 @@ function initializeCounter() {
 
         let date = new Date()
 
-        if ((data[0] <= date.getDate() && data[1] <= (date.getMonth() + 1)) || data[2] < date.getFullYear()) {
+        if ((data[0] <= date.getDate() && data[1] <= (date.getMonth() + 1)) && data[2] <= date.getFullYear()) {
 
             document.getElementById('errors').textContent = ''
             document.getElementById('errors').textContent = 'Data Passada'
