@@ -93,7 +93,10 @@ function calculate(now, input) {
         
         let sumDays = arrayDaysMonth.reduce((acc, cur) => acc + cur)
 
-        return sumDays
+        let subDays = Math.abs(arrayDaysMonth[arrayDaysMonth.length - 1] - input.iDays) + Math.abs(arrayDaysMonth[0] - (arrayDaysMonth[0] - now.days))
+        console.log(subDays)
+
+        return Math.abs(sumDays - subDays)
     } 
 }
 
