@@ -4,14 +4,14 @@ function initializeCounter() {
     let data = inputValue.match(regexSearchNumber)
 
     //redirect to counter page 
-    if (values == null && inputValue.length >= 10 && data[1] <= 12 && data[0] <= 31) {
+    if ((values == null && inputValue.length >= 10 && data[1] <= 12 && data[0] <= 31)) {
 
         let date = new Date()
 
-        if ((data[0] <= date.getDate() && data[1] <= (date.getMonth() + 1)) && data[2] <= date.getFullYear()) {
+        if (((data[0] <= date.getDate() && data[1] <= (date.getMonth() + 1)) && data[2] <= date.getFullYear()) || data[0] <= 0 || data[1] <= 0 || data[2] <= 0) {
 
             document.getElementById('errors').textContent = ''
-            document.getElementById('errors').textContent = 'Data Passada'
+            document.getElementById('errors').textContent = data[0] <= 0 || data[1] <= 0 || data[2] <= 0 ? 'Não pode ser zero' : 'Data Passada'
 
         } else {
 
